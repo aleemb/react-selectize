@@ -1,7 +1,7 @@
-/** @jsx React.DOM */
-
 /* React selectize wrapper */
-var ReactSelectize = React.createClass({displayName: "ReactSelectize",
+var React = require('react');
+
+var ReactSelectize = React.createClass({
 
   getDefaultProps: function () {
     return {
@@ -95,3 +95,5 @@ var ReactSelectize = React.createClass({displayName: "ReactSelectize",
     )
   }
 });
+
+module.exports = ReactSelectize;

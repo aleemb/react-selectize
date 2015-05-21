@@ -1,6 +1,6 @@
-/** @jsx React.DOM */
-
 /* React selectize wrapper */
+var React = require('react');
+
 var ReactSelectize = React.createClass({
 
   getDefaultProps: function () {
@@ -89,9 +89,11 @@ var ReactSelectize = React.createClass({
 
   render: function () {
     var classes = this.props.classes;
-    return <div className={classes && classes.length > 0 ? classes.join(' ') : ''}>
-      <label htmlFor={this.props.selectId}>{this.props.label}</label>
-      <select id={this.props.selectId} placeholder={this.props.placeholder}></select>
-    </div>
+    return React.createElement("div", {className: classes && classes.length > 0 ? classes.join(' ') : ''}, 
+      React.createElement("label", {htmlFor: this.props.selectId}, this.props.label), 
+      React.createElement("select", {id: this.props.selectId, placeholder: this.props.placeholder})
+    )
   }
 });
+
+module.exports = ReactSelectize;
